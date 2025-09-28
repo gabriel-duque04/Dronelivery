@@ -1,0 +1,14 @@
+# Arquivos de usuário e de cache do Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Arquivos de compilação
+/bin
+/obj
+
+# Outros
+*.csproj.user
+*.build-amd64.props
