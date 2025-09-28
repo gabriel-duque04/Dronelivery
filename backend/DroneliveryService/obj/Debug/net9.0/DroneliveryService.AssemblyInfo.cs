@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DroneliveryService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b074ee515ffdf6fbb56640309e6d7bb3ca0d59bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ff696d54a47f3edd3353f510e8b84ca264aefff")]
 [assembly: System.Reflection.AssemblyProductAttribute("DroneliveryService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DroneliveryService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

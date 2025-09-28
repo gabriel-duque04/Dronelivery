@@ -6,18 +6,16 @@
         private int _localizacaoX;
         private int _localizacaoY;
         private double _pesoPacote;
-        private int _prioridade;
+        private Prioridade _prioridade;
         private DateTime _dataHoraPedido;
+        private StatusPedido _status;
 
         //Construtor
-        public Pedido(int id, int x, int y, double pesoPacote, int prioridade)
+        public Pedido(int id, int x, int y, double pesoPacote, Prioridade prioridade)
         {
             //verificações dos inputs
             if(pesoPacote <= 0)
                 throw new ArgumentException("O peso do pacote deve ser um valor positivo.");
-
-            if(prioridade <= 0 || prioridade > 3)
-                throw new ArgumentOutOfRangeException("A prioridade deve ser 1 (Baixa), 2 (Média) ou 3 (Alta).");
 
             //Atribuição dos valores
             _id = id;
@@ -26,6 +24,53 @@
             _pesoPacote = pesoPacote;
             _prioridade = prioridade;
             _dataHoraPedido = DateTime.Now;
+            _status = StatusPedido.Pendente;
+        }
+
+        //Métodos da classe
+
+        /// <summary>
+        /// Muda status para Alocado
+        /// </summary>
+        public void MarcarComoAlocado()
+        {
+            if (_status == StatusPedido.Pendente)
+            {
+                _status = StatusPedido.Alocado;
+            }
+        }
+
+        /// <summary>
+        /// Muda status para EmEntrega
+        /// </summary>
+        public void MarcarComoEmEntrega()
+        {
+            if (_status == StatusPedido.Alocado)
+            {
+                _status = StatusPedido.EmEntrega;
+            }
+        }
+
+        /// <summary>
+        /// Muda status para concluido
+        /// </summary>
+        public void MarcarComoConcluido()
+        {
+            if (_status == StatusPedido.EmEntrega)
+            {
+                _status = StatusPedido.Concluido;
+            }
+        }
+
+        /// <summary>
+        /// Muda status para falha
+        /// </summary>
+        public void MarcarComoFalhou()
+        {
+            if (_status != StatusPedido.Concluido)
+            {
+                _status = StatusPedido.Falhou;
+            }
         }
 
         //Getters e Setters da classe:
@@ -53,7 +98,7 @@
             private set { _pesoPacote = value; }
         }
 
-        public int Prioridade
+        public Prioridade Prioridade
         {
             get { return _prioridade; }
             private set { _prioridade = value; }
@@ -63,6 +108,12 @@
         {
             get { return _dataHoraPedido; }
             set { _dataHoraPedido = value; }
+        }
+
+        public StatusPedido Status
+        {
+            get { return _status; }
+            private set { _status = value; }
         }
     }
 }
