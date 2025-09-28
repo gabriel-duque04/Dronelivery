@@ -56,6 +56,21 @@ namespace DroneliveryService.Models
             BateriaAtual = 100;
         }
 
+        public void ExecutarViagem(double distanciaDaViagem)
+        {
+            double custoPorUnidadeDeDistancia = 100.0 / _autonomiaMaximaKm;
+            double bateriaGasta = distanciaDaViagem * custoPorUnidadeDeDistancia;
+
+            if (_bateriaAtual >= bateriaGasta)
+            {
+                _bateriaAtual -= bateriaGasta;
+            }
+            else
+            {
+                _bateriaAtual = 0;
+            }
+        }
+
         //Getters e Setters da classe:
         public int Id
         {

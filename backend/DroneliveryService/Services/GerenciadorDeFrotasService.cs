@@ -21,8 +21,22 @@ namespace DroneliveryService.Services
             _pedidosPendentes = new List<Pedido>();
         }
 
+
+
         //Métodos da classe
 
+
+        public List<Pedido> ListarPedidosPendentes()
+        {
+           
+            return _pedidosPendentes;
+        }
+
+        public List<Drone> ListarDrones()
+        {
+
+            return _drones;
+        }
 
         /// <summary>
         /// Recebe parâmetros necessários e cria um novo drone, logo em seguida o adiciona na lista de drones
@@ -59,7 +73,7 @@ namespace DroneliveryService.Services
                     List<List<Pedido>> todosOsCombos = GerarCombosEntregas(pedidosPossiveis);
 
 
-                    List<Pedido> melhorComboEncontrado = null;
+                    List<Pedido>? melhorComboEncontrado = null;
                     double menorDistanciaCalculada = double.MaxValue;
 
                     foreach (List<Pedido> combo in todosOsCombos)
@@ -104,8 +118,16 @@ namespace DroneliveryService.Services
 
                         if (melhorComboEncontrado != null)
                         {
-                          
-                          
+                            droneDisponivel.AlocarParaEntrega();
+                            foreach(Pedido p in melhorComboEncontrado)
+                            {
+                                p.MarcarComoAlocado();
+                            }
+
+                            _pedidosPendentes.RemoveAll(pedido => melhorComboEncontrado.Contains(pedido));
+
+                            droneDisponivel.ExecutarViagem(menorDistanciaCalculada);
+
                         }
 
                     }
@@ -220,5 +242,7 @@ namespace DroneliveryService.Services
 
             return distanciaTotal;
         }
+
+
     }
 }

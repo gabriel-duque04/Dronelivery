@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "l7nKD9RjuHnkh1cWuFoF1z/nEdk7wBAXyM6PkIdNOsA=",
+  "Source": "DroneliveryService",
+  "BasePath": "_content/DroneliveryService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

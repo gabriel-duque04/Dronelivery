@@ -34,7 +34,7 @@
         /// <returns>Se posição é válida</returns>
         public bool IsPosicaoValidaECaminhoLivre(int x, int y)
         {
-            if (x < -1 || x >= Altura || y < -1 || y >= Largura)
+            if (x < 0 || x >= Altura || y < 0 || y >= Largura)
             {
                 return false;
             }

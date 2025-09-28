@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "DroneliveryService.Controllers.DronesController",
+    "Method": "ObterStatusDrones",
+    "RelativePath": "api/Drones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DroneliveryService.Controllers.DronesController",
+    "Method": "AdicionarNovoDrone",
+    "RelativePath": "api/Drones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DroneliveryService.Models.CriarDroneRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DroneliveryService.Controllers.PedidosController",
+    "Method": "CriarNovoPedido",
+    "RelativePath": "api/Pedidos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoPedidoRequest",
+        "Type": "DroneliveryService.Models.CriarPedidoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DroneliveryService.Controllers.PedidosController",
+    "Method": "ObterPedidosPendentes",
+    "RelativePath": "api/Pedidos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
