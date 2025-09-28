@@ -44,7 +44,7 @@ namespace DroneliveryService.Models
         }
 
         /// <summary>
-        /// Método para alterar o status para Ocioso
+        /// Método para alterar o status para Ocioso e recarrega a bateria
         /// </summary>
         public void FinalizarCiclo()
         {
@@ -52,6 +52,8 @@ namespace DroneliveryService.Models
             {
                 _status = StatusDrone.Ocioso;
             }
+
+            BateriaAtual = 100;
         }
 
         //Getters e Setters da classe:
