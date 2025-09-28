@@ -1,0 +1,6 @@
+@DroneliveryService_HostAddress = http://localhost:5181
+
+GET {{DroneliveryService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
