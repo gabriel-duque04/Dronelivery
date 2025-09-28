@@ -7,6 +7,14 @@
         private double _autonomiaMaximaKm;
         private double _bateriaAtual;
 
+        //Construtor da classe
+        public Drone(int id, double capacidadeMaximaKG, double autonomiaMaximaKM)
+        {
+            _id = id;
+            _capacidadeMaximaKg = capacidadeMaximaKG;
+            _autonomiaMaximaKm = autonomiaMaximaKM;
+            _bateriaAtual = 100;
+        }
 
         //Getters e Setters da classe:
         public int Id
